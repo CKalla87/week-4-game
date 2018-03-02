@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ln="us-ne">
+    <head>
+        <meta charset="UTF-8">
+        <title>Crystals | Collector Game</title>
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <nav id="navbar">
+            <header id="logo">
+                <h1>Crystals Collector!</h1>
+            </header>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6" id="outline">
+                    <p>You will be given a random number at the start of the game.</p>
+                    
+                    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                    
+                    <p>You win the game by matching your total score to a random number, you lose the game ifyour total score goes above the random number.</p>
+                    
+                    <p>The value of each crystal is hidden from you until you click on it.</p>
+                    
+                    <p>Each time when the game starts, the game will change the vlaues of each crystal.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2" id="totalToWin">
+                   
+                </div>
+
+                <div class="col-sm-2" id="score">
+                    <p id="wins">Wins:</p>
+                    <p id="losses">Losses:</p>
+                </div>
+            </div>
+
+            <div class="row" class="clickButton">
+                <div class="col-12">
+                   <img src="assets/images/BlueCrystal.jpg" alt="image" id="blueCrystal" class="images">
+                   <img src="assets/images/PurpleCrystal.jpeg" alt="image" id="purpleCrystal" class="images">
+                   <img src="assets/images/RedCrystal.jpeg" alt="image" id="redCrystal" class="images">
+                   <img src="assets/images/WhiteCrystal.jpg" alt="image" id="whiteCrystal" class="images">
+                </div>
+            </div>
+            
+            <div class="row" id="totalScore">
+                <div class="col-sm-6">
+                    <p>Your total score is:</p>
+                </div>
+            </div>
+            <div class="row" id="scoreNumber">
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+        </div>
+    
+        <script tabindex="text/javascript" src="assets/javascript/game.js"></script>
+
+        <footer>
+            <div id="footerDesign">
+                <a href="https://ckalla87.github.io/Responsive-Portfolio/">About Chris Kalla</a> | <a href="https://github.com/CKalla87/Responsive-Portfolio">Github Repo</a>
+                <br>
+                &#64; Copyright 2018 Crystals Collector
+            </div>
+        </footer>
+    
+    </body>
+</html>
