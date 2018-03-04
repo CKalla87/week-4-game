@@ -2,50 +2,73 @@
 $(document).ready(function(){
     
     //Setting randomg number type//
-    var randomNumber= Math.floor(Math.random()*100+19);
+    var randomNumber= Math.floor(Math.random()*101)+19;
     //Setting Crystal Variable//
-    var blueCrystal= Math.floor(Math.random()*11+1);
-    var purpleCrystal= Math.floor(Math.random()*11+1);
-    var redCrystal= Math.floor(Math.random()*11+1);
-    var whiteCrystal= Math.floor(Math.random()*11+1);
+    var blueCrystal= Math.floor(Math.random()*11)+1;
+    var purpleCrystal= Math.floor(Math.random()*11)+1;
+    var redCrystal= Math.floor(Math.random()*11)+1;
+    var whiteCrystal= Math.floor(Math.random()*11)+1;
     //Setting Score Variables//
     var Wins= 0;
     var Losses= 0;
     var totalScore= 0;
-
+    
     //Appending Radom Number Variable//
-    $("#totalToWin").text(randomNumber);
+    $("#totalToWin").html(randomNumber);
 
     //Appending Wins & Losses//
-    $("#wins").text("Wins: " + Wins);
-    $("#losses").text("Losses: " + Losses);
-    $("#scoreNumber").text(totalScore);
+    $("#wins").html("Wins: " + Wins);
+    $("#losses").html("Losses: " + Losses);
+    $("#scoreNumber").html(totalScore);
     
     //Reset function//
     function reset() {
-        randomNumber= Math.floor(Math.random()*100+19);
-        console.log(randomNumber);
-        ('#totalToWin').text(randomNumber);
-        blueCrystal= Math.floor(Math.random()*11+1);
-        purpleCrystal= Math.floor(Math.random()*11+1);
-        redCrystal= Math.floor(Math.random()*11+1);
-        whiteCrystal= Math.floor(Math.random()*11+1);
+        randomNumber= Math.floor(Math.random()*101)+19;
+        $('#totalToWin').html(randomNumber);
+        
         totalScore= 0;
-        $('#scoreNumber').text(totalScore);
-    }
+        $("#scoreNumber").html(totalScore);
+        
+        blueCrystal= Math.floor(Math.random()*11)+1;
+        $("#blueCrystal").html(blueCrystal);
+        
+        purpleCrystal= Math.floor(Math.random()*12)+1;
+        $("#purpleCrystal").html(purpleCrystal);
+        
+        redCrystal= Math.floor(Math.random()*12)+1;
+        $("#redCrystal").html(redCrystal);
+        
+        whiteCrystal= Math.floor(Math.random()*12)+1;
+        $("#whiteCrystal").html(whiteCrystal);
+
+        //Game Over Condition, Resets The Game
+        if (Wins === 10) {
+            Wins= 0;
+            Losses=0;
+            $("#wins").html("Wins: " + Wins);
+            $("#losses").html("Losses:" + Losses);
+            alert("Game Over! The Force Is Strong With You!")
+        } else if (Losses === 10) {
+            Wins= 0;
+            Losses=0;
+            $("#wins").html("Wins: " + Wins);
+            $("#losses").html("Losses:" + Losses);
+            alert("Game Over! You Could Do Better Next Time!")
+        }
+    };
     
     //Tally function for wins and losses//
     function Winner() {
-        alert("You Won!");
+        alert("Look At You Go! You Won!");
         Wins++;
-        $("#wins").text("Wins: " + Wins);
+        $("#wins").html("Wins: " + Wins);
         reset();
     }
 
     function Loser() {
-        alert("You Lose!");
+        alert("Bummer, Sorry You Lost!");
         Losses++;
-        $("#losses").text("Losses: " + Losses);
+        $("#losses").html("Losses: " + Losses);
         reset();
     }
 
@@ -54,20 +77,18 @@ $(document).ready(function(){
     $("#blueCrystal").on('click', function() {
         totalScore = totalScore + blueCrystal;
         console.log("NewTotalScore: " + totalScore);
-        $("#scoreNumber").text(totalScore);
+        $("#scoreNumber").html(totalScore);
         if (totalScore === randomNumber){
             Winner();
         } else if ( totalScore > randomNumber) {
             Loser();
-            randomNumber= Math.floor(Math.random()*100+19);
-            ("#totalToWin").text(randomNumber);
         }
     });    
     
     $("#purpleCrystal").on('click', function() {
-        totalScore = totalScore + blueCrystal;
+        totalScore = totalScore + purpleCrystal;
         console.log("NewTotalScore: " + totalScore);
-        $("#scoreNumber").text(totalScore);
+        $("#scoreNumber").html(totalScore);
         if (totalScore === randomNumber){
             Winner();
         } else if ( totalScore > randomNumber) {
@@ -76,9 +97,9 @@ $(document).ready(function(){
     });    
 
     $("#redCrystal").on('click', function() {
-        totalScore = totalScore + blueCrystal;
+        totalScore = totalScore + redCrystal;
         console.log("NewTotalScore: " + totalScore);
-        $("#scoreNumber").text(totalScore);
+        $("#scoreNumber").html(totalScore);
         if (totalScore === randomNumber){
             Winner();
         } else if ( totalScore > randomNumber) {
@@ -87,9 +108,9 @@ $(document).ready(function(){
     });    
         
     $("#whiteCrystal").on('click', function() {
-        totalScore = totalScore + blueCrystal;
+        totalScore = totalScore + whiteCrystal;
         console.log("NewTotalScore: " + totalScore);
-        $("#scoreNumber").text(totalScore);
+        $("#scoreNumber").html(totalScore);
         if (totalScore === randomNumber){
             Winner();
         } else if ( totalScore > randomNumber) {
