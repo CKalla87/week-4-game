@@ -1,5 +1,7 @@
-# week-4-game
+# Crystals Game
 Week 4 HW Game
+
+https://ckalla87.github.io/week-4-game/
 
 1. You will be given a random number at the start of the game.
 
